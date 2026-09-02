@@ -6,7 +6,23 @@
   <meta name="theme-color" content="#fff4e8" />
   <title>SORAMO — 天気と、今日のスタイル。</title>
   <meta name="description" content="天気・服装・星座占い・寄り道をひとつに。今日の過ごし方が30秒で決まる生活ダッシュボード。" />
-  <link rel="stylesheet" href="style.css" />
+  <style>
+:root{
+  --bg:#fff4e8;--paper:#fffaf4;--white:#fffdf9;--ink:#342923;--muted:#7b6c63;
+  --coral:#ff5b35;--orange:#ff8c42;--pink:#ff789b;--lav:#c9b5f5;--peach:#ffd0b5;
+  --line:#efd5c8;--line-soft:#f6e2d8;--shadow:0 14px 34px rgba(112,67,45,.09);
+  --r:26px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#fff8ef 0%,#fff0df 100%);color:var(--ink);font-family:Inter,"Noto Sans JP",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}button,select{font:inherit;color:inherit}button{cursor:pointer}.page-shell{max-width:1180px;margin:auto;padding:0 26px 64px}.topbar{height:82px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{text-decoration:none;color:inherit;display:flex;flex-direction:column;line-height:.9}.brand-main{font-size:28px;font-weight:950;letter-spacing:-.045em;color:var(--coral)}.brand-sub{font-size:9px;letter-spacing:.22em;font-weight:850;color:#a8796c;margin-top:9px}.top-actions{display:flex;align-items:center;gap:12px}.icon-btn{border:1px solid var(--line);background:#fffaf5;border-radius:999px;padding:10px 14px;font-weight:850;font-size:12px}.saved-state{font-size:10px;color:var(--muted)}
+.card,.quick-pref{background:rgba(255,253,249,.92);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}.kicker{display:block;font-size:10px;font-weight:950;letter-spacing:.12em;color:var(--pink);margin-bottom:7px}.kicker.orange{color:var(--coral)}.kicker.pink{color:var(--pink)}
+.quick-pref{padding:18px 20px;margin-bottom:16px;position:relative;overflow:hidden}.quick-pref:after{content:"✿";position:absolute;right:18px;top:-27px;font-size:82px;color:#ff789b18;pointer-events:none}.quick-pref-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:13px}.quick-pref-head h1{font-size:18px;line-height:1.25;margin:0;font-weight:950}.quick-note{font-size:10px;color:var(--muted)}.quick-pref-row{display:grid;grid-template-columns:minmax(0,1fr) 150px 130px;gap:12px;align-items:end}.pref-label,.compact-field>span{font-size:10px;color:var(--muted);font-weight:850;display:block;margin-bottom:7px}.style-chips{display:flex;gap:7px;overflow-x:auto;padding-bottom:2px}.style-chip{border:1px solid var(--line);background:#fff9f3;border-radius:999px;padding:9px 14px;font-weight:900;font-size:12px;white-space:nowrap}.style-chip.active{background:var(--coral);border-color:var(--coral);color:white;box-shadow:0 8px 18px #ff5b3525}.compact-field select{width:100%;border:1px solid var(--line);background:#fff9f3;border-radius:13px;padding:9px 11px;font-size:12px;font-weight:800;outline:none}
+.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:16px}.weather-main{padding:24px}.weather-topline{display:flex;align-items:start;justify-content:space-between;gap:14px}.place{font-size:14px;font-weight:900}.date-pill{font-size:11px;color:var(--muted);background:#fff2e5;border:1px solid var(--line-soft);border-radius:999px;padding:8px 11px}.weather-core{display:flex;align-items:center;gap:18px;margin-top:24px}.weather-icon{font-size:62px;line-height:1}.temp{font-size:76px;line-height:.9;font-weight:950;letter-spacing:-.06em;color:var(--coral)}.temp small{font-size:25px;letter-spacing:0}.condition{font-size:15px;font-weight:850;margin-top:8px}.weather-note{font-size:13px;line-height:1.7;color:var(--muted);margin:18px 0 20px;max-width:520px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-soft);padding-top:15px}.metric{padding:0 12px;border-right:1px solid var(--line-soft)}.metric:first-child{padding-left:0}.metric:last-child{border-right:0}.metric b{display:block;font-size:18px;color:var(--ink)}.metric span{display:block;font-size:10px;color:var(--muted);margin-top:3px}
+.decision{display:grid;grid-template-columns:1fr 230px;min-height:344px;overflow:hidden}.decision-copy{padding:24px 0 22px 24px;position:relative;z-index:3}.decision h2{font-size:26px;line-height:1.25;margin:4px 0 11px;letter-spacing:-.025em}.decision-copy>p{font-size:13px;line-height:1.65;color:var(--muted);margin:0;max-width:330px}.decision-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.pill{display:inline-flex;align-items:center;min-height:30px;border:1px solid var(--line);background:#fff9f3;border-radius:999px;padding:7px 11px;font-size:10px;font-weight:900}.pill.coral{background:var(--coral);border-color:var(--coral);color:white}.tiny-note{font-size:10px!important;margin-top:9px!important}.outfit-visual{position:relative;min-height:344px;display:flex;justify-content:center;align-items:flex-end;overflow:hidden}.blob{position:absolute;border-radius:50% 50% 42% 58%}.blob-a{width:230px;height:270px;background:var(--pink);right:-26px;top:15px;transform:rotate(8deg)}.blob-b{width:180px;height:170px;background:var(--peach);left:0;bottom:-42px}.outfit-img{position:relative;z-index:3;width:205px;height:328px;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 12px 16px #844b3d16);transition:.18s ease}.outfit-img.changing{opacity:.3;transform:translateY(5px)}.spark{position:absolute;z-index:2;font-size:36px;color:#fff}.s1{right:21px;top:36px}.s2{left:10px;bottom:42px;color:var(--pink);font-size:48px}
+.section-block{margin-top:30px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:13px}.section-head h2{font-size:22px;margin:0;letter-spacing:-.02em}.section-head p{font-size:11px;color:var(--muted);margin:0}.info-grid{display:grid;grid-template-columns:1.05fr 1fr .95fr;gap:14px}.info-card{padding:19px;min-height:230px}.card-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}.card-title h3{font-size:14px;margin:0}.mini-tag{font-size:9px;font-weight:850;background:#fff0e6;border:1px solid var(--line);border-radius:999px;padding:6px 9px;color:var(--coral)}.hourly{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;overflow:auto}.hour{text-align:center;padding:10px 4px;border-radius:14px;background:#fff7ef}.hour.now{background:#ffe6da}.hour small{font-size:9px;color:var(--muted)}.hour i{display:block;font-style:normal;font-size:23px;margin:8px 0}.hour b{font-size:13px}.fortune-main{display:grid;grid-template-columns:72px 1fr;gap:13px;align-items:center}.fortune-score{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;text-align:center;background:linear-gradient(145deg,var(--pink),#ff9db5);color:#fff}.fortune-score strong{font-size:24px;line-height:1}.fortune-score small{display:block;font-size:7px;letter-spacing:.14em;margin-top:2px}.fortune-copy b{font-size:14px}.fortune-copy p{font-size:11px;line-height:1.6;color:var(--muted);margin:6px 0 0}.fortune-points{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:17px}.fortune-points div{background:#fff7ef;border-radius:12px;padding:8px}.fortune-points span{display:block;font-size:8px;color:var(--muted)}.fortune-points b{font-size:10px;color:var(--coral)}.spots{display:grid;gap:8px}.spot{display:grid;grid-template-columns:34px 1fr 14px;gap:8px;align-items:center;text-decoration:none;color:inherit;border:1px solid var(--line-soft);background:#fffaf5;border-radius:14px;padding:10px}.spot-icon{font-size:22px}.spot b{display:block;font-size:11px}.spot small{display:block;font-size:9px;color:var(--muted);margin-top:3px}.spot i{font-style:normal;color:var(--coral);font-size:20px}.bottom-note{margin-top:14px;border-radius:20px;background:linear-gradient(135deg,#ff805e,#ff789b);color:#fff;padding:16px 20px;display:flex;align-items:center;gap:13px}.bottom-note>span{font-size:32px}.bottom-note b{display:block;font-size:13px}.bottom-note small{display:block;font-size:9px;opacity:.78;margin-top:3px}footer{text-align:center;color:#a18b7e;font-size:9px;padding:28px 0 0}.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,18px);opacity:0;pointer-events:none;transition:.2s;background:#382b25;color:#fff;border-radius:999px;padding:11px 14px;font-size:11px;z-index:50}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:900px){.quick-pref-row{grid-template-columns:1fr 1fr}.style-group{grid-column:1/-1}.hero-grid{grid-template-columns:1fr}.decision{grid-template-columns:1fr 220px}.info-grid{grid-template-columns:1fr 1fr}.detour-card{grid-column:1/-1}.spots{grid-template-columns:repeat(3,1fr)}.spot{grid-template-columns:30px 1fr}.spot i{display:none}}
+@media(max-width:620px){.page-shell{padding:0 14px 44px}.topbar{height:68px}.brand-main{font-size:23px}.top-actions{gap:7px}.saved-state{display:none}.icon-btn{padding:8px 11px}.quick-pref{padding:15px;margin-bottom:12px}.quick-pref-head{align-items:start}.quick-pref-head h1{font-size:16px}.quick-note{display:none}.quick-pref-row{grid-template-columns:1fr 1fr;gap:9px}.style-group{grid-column:1/-1}.style-chips{margin-right:-15px;padding-right:15px}.style-chip{padding:8px 12px;font-size:11px}.weather-main{padding:19px}.weather-core{margin-top:18px}.weather-icon{font-size:50px}.temp{font-size:62px}.metrics{grid-template-columns:repeat(4,minmax(62px,1fr));overflow:auto}.metric{padding:0 8px}.metric b{font-size:16px}.decision{grid-template-columns:1fr 145px;min-height:300px}.decision-copy{padding:20px 0 18px 19px}.decision h2{font-size:21px}.outfit-visual{min-height:300px}.outfit-img{width:145px;height:286px}.blob-a{width:170px;height:220px}.blob-b{width:130px;height:130px}.section-block{margin-top:24px}.section-head{align-items:start}.section-head h2{font-size:19px}.section-head p{display:none}.info-grid{grid-template-columns:1fr}.detour-card{grid-column:auto}.info-card{min-height:auto;padding:16px}.hourly{grid-template-columns:repeat(6,58px)}.spots{grid-template-columns:1fr}.spot{grid-template-columns:34px 1fr 14px}.spot i{display:block}.bottom-note{padding:13px 15px}}
+
+</style>
 </head>
 <body>
   <div class="page-shell">
@@ -105,7 +121,7 @@
             <div class="blob blob-b"></div>
             <span class="spark s1">✦</span>
             <span class="spark s2">✿</span>
-            <img class="outfit-img" id="outfitIllust" src="looks/look-1.webp" alt="今日の服装イラスト" />
+            <img class="outfit-img" id="outfitIllust" src="./looks/look-1.webp?v=3" alt="今日の服装イラスト" />
           </div>
         </aside>
       </section>
@@ -170,6 +186,104 @@
     <footer>SORAMO / Weather data: Open-Meteo / Horoscope is entertainment content.</footer>
   </div>
   <div class="toast" id="toast">好みを更新したで ✦</div>
-  <script src="app.js"></script>
+  <script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const styleNames={casual:'CASUAL',minimal:'MINIMAL',mode:'MODE',feminine:'FEMININE'};
+const lookPairs={casual:{warm:6,cool:1},minimal:{warm:4,cool:2},mode:{warm:7,cool:8},feminine:{warm:5,cool:3}};
+const signNames={aries:'おひつじ座',taurus:'おうし座',gemini:'ふたご座',cancer:'かに座',leo:'しし座',virgo:'おとめ座',libra:'てんびん座',scorpio:'さそり座',sagittarius:'いて座',capricorn:'やぎ座',aquarius:'みずがめ座',pisces:'うお座'};
+let state={lat:35.6762,lon:139.6503,name:'Tokyo, Japan',weather:null,style:'casual'};
+
+function weatherLabel(code){
+  if(code===0)return['晴れ','☀️'];
+  if([1,2].includes(code))return['晴れ時々くもり','🌤️'];
+  if(code===3)return['くもり','☁️'];
+  if([45,48].includes(code))return['霧','🌫️'];
+  if([51,53,55,56,57,61,63,65,80,81,82].includes(code))return['雨','🌧️'];
+  if([71,73,75,77,85,86].includes(code))return['雪','🌨️'];
+  if([95,96,99].includes(code))return['雷雨','⛈️'];
+  return['くもり','☁️'];
+}
+function effectiveFeels(feels){let v=feels;if($('#cold').value==='cold')v-=2;if($('#cold').value==='hot')v+=2;return v}
+function chooseLook(feels=22){const pair=lookPairs[state.style];return pair[effectiveFeels(feels)>=24?'warm':'cool']}
+function setLook(feels=22){
+  const img=$('#outfitIllust');
+  const look=chooseLook(feels);
+  $('#outfitStyleTag').textContent=styleNames[state.style];
+  img.classList.add('changing');
+  setTimeout(()=>{img.src=`./looks/look-${look}.webp?v=3`;img.classList.remove('changing')},90);
+  $$('.style-chip').forEach(b=>b.classList.toggle('active',b.dataset.style===state.style));
+}
+function outfit(feels,rain,wind){
+  const a=effectiveFeels(feels);let title,reason;
+  if(a>=30){title='涼しいトップスで軽く';reason='かなり暑め。通気性と日差し対策を優先。'}
+  else if(a>=25){title='半袖＋軽い羽織';reason='日中は半袖で快適。冷房対策に薄手の羽織を。'}
+  else if(a>=20){title='長袖シャツがちょうどいい';reason='脱ぎ着しやすい一枚が今日の正解。'}
+  else if(a>=15){title='薄手ニット＋ジャケット';reason='風があるとひんやり。軽い上着が安心。'}
+  else{title='アウターをしっかり';reason='冷え込み対策を優先。'}
+  if(wind>=8)reason+=' 風も強め。';
+  if(rain>=50)reason+=' 雨に強い靴が◎。';
+  return[title,reason];
+}
+function umbrella(rain){
+  if(rain>=60)return['傘を持って ☂','今日はしっかり雨対策。'];
+  if(rain>=30)return['折りたたみ傘','にわか雨に備えると安心。'];
+  return['傘なしでOK','身軽にいけそう。'];
+}
+function render(d){
+  state.weather=d;const c=d.current,x=d.daily;const r=x.precipitation_probability_max[0]??0;
+  const [cond,ico]=weatherLabel(c.weather_code);const [ot,or]=outfit(c.apparent_temperature,r,c.wind_speed_10m/3.6);const [umb,umbSub]=umbrella(r);
+  $('#temp').textContent=Math.round(c.temperature_2m);$('#condition').textContent=cond;$('#weatherIcon').textContent=ico;
+  $('#rain').textContent=r+'%';$('#wind').textContent=(c.wind_speed_10m/3.6).toFixed(1)+' m/s';$('#feels').textContent=Math.round(c.apparent_temperature)+'°';
+  $('#uv').textContent=x.uv_index_max?.[0]?.toFixed(1)??'--';$('#place').textContent='📍 '+state.name;
+  $('#outfitTitle').textContent=ot;$('#outfitReason').textContent=or;$('#umbrella').textContent=umb;$('#umbrellaSub').textContent=umbSub;
+  $('#weatherNote').textContent=`最高 ${Math.round(x.temperature_2m_max[0])}° / 最低 ${Math.round(x.temperature_2m_min[0])}°。${r>=50?'雨を見ながら、移動は少し余裕を。':'大きな雨の心配は少なめ。'}`;
+  $('#daySummary').textContent=`最高 ${Math.round(x.temperature_2m_max[0])}° / 最低 ${Math.round(x.temperature_2m_min[0])}°。${r>=50?'傘と足元を忘れずに。':'身軽に動けそうな一日。'}`;
+  $('#walkSub').textContent=r>=50?'今日は屋内寄り道がよさそう':'今日は散歩向き';
+  setLook(c.apparent_temperature);renderHourly(d);
+}
+function renderHourly(d){
+  const h=d.hourly,n=new Date();let s=h.time.findIndex(v=>new Date(v)>=new Date(n.getFullYear(),n.getMonth(),n.getDate(),n.getHours()));if(s<0)s=0;
+  $('#hourly').innerHTML=h.time.slice(s,s+6).map((v,j)=>{const i=s+j,t=new Date(v);return `<div class="hour ${j===0?'now':''}"><small>${j===0?'NOW':t.getHours()+'時'}</small><i>${weatherLabel(h.weather_code[i])[1]}</i><b>${Math.round(h.temperature_2m[i])}°</b></div>`}).join('');
+}
+async function fetchWeather(){
+  const condition=$('#condition');
+  try{
+    condition.textContent='天気を取得中…';
+    const u=`https://api.open-meteo.com/v1/forecast?latitude=${state.lat}&longitude=${state.lon}&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m&hourly=temperature_2m,weather_code,precipitation_probability&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,uv_index_max&timezone=auto&forecast_days=2`;
+    const r=await fetch(u,{cache:'no-store'});
+    if(!r.ok) throw new Error(`weather HTTP ${r.status}`);
+    const d=await r.json();
+    if(!d.current||!d.daily||!d.hourly) throw new Error('weather data missing');
+    render(d);
+  }catch(err){
+    console.error('SORAMO weather error',err);
+    condition.textContent='天気を取得できませんでした';
+    $('#weatherNote').textContent='通信を確認して再読み込みしてみてな。';
+  }
+}
+async function reverse(lat,lon){try{const r=await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=10&accept-language=ja`);const d=await r.json();return d.address?.city||d.address?.ward||d.address?.town||d.address?.state||'現在地'}catch{return'現在地'}}
+function locate(){navigator.geolocation?.getCurrentPosition(async p=>{state.lat=p.coords.latitude;state.lon=p.coords.longitude;state.name=await reverse(state.lat,state.lon);fetchWeather()},()=>showToast('位置情報を取得できませんでした'))}
+function stars(n){return'★'.repeat(n)+'☆'.repeat(5-n)}
+function fortune(){
+  const s=$('#sign').value,d=new Date(),seed=d.getFullYear()*372+(d.getMonth()+1)*31+d.getDate()+s.length*17;
+  const i=seed%5,score=68+(seed%27),work=3+(seed%3),love=2+((seed+1)%4),money=3+((seed+2)%3);
+  const titles=['軽く動くほど運がひらく日。','小さな違和感がヒント。','寄り道に発見がありそう。','人より自分のペースが正解。','いつもと違う色を選んでみて。'];
+  const texts=['考えすぎる前の一歩がちょうどいい。','気になったものを一枚写真に残すと、あとでつながりそう。','帰り道を少し変えるだけで気分が切り替わりそう。','予定を詰めすぎず、余白を残すと調子が出そう。','服か小物に一色だけ遊びを入れると気分も上向き。'];
+  $('#signTag').textContent=signNames[s];$('#fortuneScore').textContent=score;$('#fortuneTitle').textContent=titles[i];$('#fortuneText').textContent=texts[i];
+  $('#workLuck').textContent=stars(Math.min(work,5));$('#loveLuck').textContent=stars(Math.min(love,5));$('#moneyLuck').textContent=stars(Math.min(money,5));
+}
+function savePrefs(show=false){localStorage.setItem('soramoPrefs',JSON.stringify({sign:$('#sign').value,cold:$('#cold').value,style:state.style}));if(show)showToast('好みを更新したで ✦')}
+function applyStyle(style,show=true){state.style=style;setLook(state.weather?.current?.apparent_temperature??22);if(state.weather)render(state.weather);savePrefs(show)}
+function showToast(text){const t=$('#toast');t.textContent=text;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1300)}
+function loadPrefs(){try{const p=JSON.parse(localStorage.getItem('soramoPrefs'));if(p){$('#sign').value=p.sign||'libra';$('#cold').value=p.cold||'normal';state.style=p.style||'casual'}}catch{}setLook();fortune()}
+
+$$('.style-chip').forEach(b=>b.addEventListener('click',()=>applyStyle(b.dataset.style)));
+$('#sign').addEventListener('change',()=>{fortune();savePrefs(true)});
+$('#cold').addEventListener('change',()=>{state.weather&&render(state.weather);savePrefs(true)});
+$('#locateBtn').addEventListener('click',locate);
+$('#date').textContent=new Intl.DateTimeFormat('ja-JP',{month:'long',day:'numeric',weekday:'short'}).format(new Date());
+loadPrefs();fetchWeather();
+
+</script>
 </body>
 </html>
